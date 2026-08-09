@@ -1,10 +1,9 @@
 {
   "name": "My Calculator",
   "short_name": "Calculator",
-  "description": "A simple and easy-to-use calculator for everyday calculations.",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#008000",
+  "background_color": "#ffffff",
   "theme_color": "#990099",
   "orientation": "any",
   "icons": [
