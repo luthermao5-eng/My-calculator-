@@ -1,12 +1,22 @@
-"icons": [
-  {
-    "src": "icon-192.png",
-    "sizes": "192x192",
-    "type": "image/png"
-  },
-  {
-    "src": "icon-512.png",
-    "sizes": "512x512",
-    "type": "image/png"
-  }
-]
+{
+  "name": "My Calculator",
+  "short_name": "Calculator",
+  "description": "A simple and easy-to-use calculator for everyday calculations.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#008000",
+  "theme_color": "#990099",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "icon-192-1.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
