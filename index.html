@@ -1,36 +1,57 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>calculator</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Calculator</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+
+  <meta name="theme-color" content="#990099">
 </head>
-    
+
 <body>
+
   <div class="calculator">
-    <input id="display">
-    <!  your buttons here >
+
+    <input id="display" readonly>
+
     <button>7</button>
     <button>8</button>
     <button>9</button>
     <button>4</button>
+
     <button>5</button>
     <button>6</button>
     <button>3</button>
     <button>2</button>
+
     <button>1</button>
     <button>0</button>
     <button>C</button>
     <button>÷</button>
+
     <button>+</button>
     <button>-</button>
     <button>*</button>
     <button>cos</button>
+
     <button>tan</button>
     <button>sin</button>
     <button>%</button>
     <button>=</button>
-</div>
-<script src="script.js"></script>
+
+  </div>
+
+  <script src="script.js"></script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./sw.js");
+    }
+  </script>
+
 </body>
 </html>
