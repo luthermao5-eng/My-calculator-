@@ -64,3 +64,36 @@ if ("serviceWorker" in navigator) {
             });
     });
       }
+function calculateSin() {
+    const value = Number(display.value);
+
+    if (Number.isNaN(value)) {
+        display.value = "Error";
+        return;
+    }
+
+    display.value = Math.sin(value * Math.PI / 180);
+}
+
+function calculateCos() {
+    const value = Number(display.value);
+
+    if (Number.isNaN(value)) {
+        display.value = "Error";
+        return;
+    }
+
+    display.value = Math.cos(value * Math.PI / 180);
+}
+
+function calculateTan() {
+    const value = Number(display.value);
+
+    if (Number.isNaN(value)) {
+        display.value = "Error";
+        return;
+    }
+
+    display.value = Math.tan(value * Math.PI / 180);
+                }
+
