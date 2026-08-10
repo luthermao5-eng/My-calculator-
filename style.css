@@ -20,9 +20,9 @@ body {
 
     padding: 20px;
 
-    background: purple;
+    background: orange;
 
-    border: 2px solid purple;
+    border: 2px solid orange;
 
     border-radius: 15px;
 
@@ -41,7 +41,7 @@ body {
 
     border-radius: 10px;
 
-    background: pink;
+    background: green;
 
     color: black;
 
@@ -71,7 +71,7 @@ button {
 
     background: green;
 
-    color: yellow;
+    color: orange;
 
     font-size: 18px;
 
