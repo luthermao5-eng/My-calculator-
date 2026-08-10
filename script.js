@@ -1,50 +1,66 @@
 const display = document.getElementById("display");
-const buttons = document.querySelectorAll("button");
 
-let firstNumber = "";
-let operator = "";
-
-buttons.forEach(button => {
-  button.addEventListener("click", () => {
-    const value = button.textContent;
-    if (value === "+" || value === "-" || value === "*" || value === "÷") {
-      firstNumber = display.value;
-      operator = value;
-display.value += value;
-return;
-}
-if (value === "=") {
-    const expression = display.value.replace("÷", "/");
-display.value = eval(expression);
-}
-if (value === "%") {
-    display.value = Number(display.value) / 100;
-    return;
-}
-if (value === "sin") {
-    display.value = Math.sin(Number(display.value) * Math.PI / 180);
-    return;
-}
-if (value === "cos") {
-    display.value = Math.cos(Number(display.value) * Math.PI / 180);
-    return;
-}
-if (value === "tan") {
-    display.value = Math.tan(Number(display.value) * Math.PI / 180);
-    return;
-}
-if (value === "C") {
-    display.value = "";
-    return;
-}
-
+function appendValue(value) {
     display.value += value;
+}
 
-});
+function clearDisplay() {
+    display.value = "";
+}
 
-});
+function deleteLast() {
+    display.value = display.value.slice(0, -1);
+}
+
+function percentage() {
+    if (display.value === "") {
+        return;
+    }
+
+    const value = Number(display.value);
+
+    if (Number.isNaN(value)) {
+        display.value = "Error";
+        return;
+    }
+
+    display.value = value / 100;
+}
+
+function calculate() {
+    if (display.value.trim() === "") {
+        return;
+    }
+
+    try {
+        const expression = display.value;
+
+        if (!/^[0-9+\-*/.() ]+$/.test(expression)) {
+            display.value = "Error";
+            return;
+        }
+
+        const result = Function(
+            '"use strict"; return (' + expression + ')'
+        )();
+
+        if (!Number.isFinite(result)) {
+            display.value = "Error";
+            return;
+        }
+
+        display.value = result;
+
+    } catch (error) {
+        display.value = "Error";
+    }
+}
+
 if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
-        navigator.serviceWorker.register("./sw.js");
+        navigator.serviceWorker.register("./sw.js")
+            .catch(() => {
+                console.log("Service worker registration failed.");
+            });
     });
-}
+      }
